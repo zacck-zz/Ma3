@@ -81,9 +81,9 @@ containing a value of this type.
         public static final int dashboard_button_matatu=0x7f090011;
         public static final int dashboard_button_reports=0x7f090014;
         public static final int dashboard_button_taxi=0x7f090012;
-        public static final int dashboard_menu_direction=0x7f090026;
-        public static final int dashboard_menu_more=0x7f090028;
-        public static final int dashboard_menu_share=0x7f090027;
+        public static final int dashboard_menu_direction=0x7f090025;
+        public static final int dashboard_menu_more=0x7f090027;
+        public static final int dashboard_menu_share=0x7f090026;
         public static final int editText1=0x7f09001e;
         public static final int gps_location_output=0x7f090017;
         public static final int imageView=0x7f090022;
@@ -93,25 +93,24 @@ containing a value of this type.
         public static final int list_item_description=0x7f090010;
         public static final int list_item_icon=0x7f09000e;
         public static final int list_item_title=0x7f09000f;
-        public static final int location_menu_current_location=0x7f090029;
-        public static final int location_menu_directions=0x7f09002a;
-        public static final int location_menu_taxis=0x7f09002b;
+        public static final int location_menu_current_location=0x7f090028;
+        public static final int location_menu_directions=0x7f090029;
+        public static final int location_menu_taxis=0x7f09002a;
         public static final int mapView=0x7f090015;
-        public static final int matatu_menu_add_route=0x7f09002c;
-        public static final int matatu_menu_directions=0x7f09002f;
-        public static final int matatu_menu_more=0x7f09002e;
-        public static final int matatu_menu_share=0x7f09002d;
+        public static final int matatu_menu_add_route=0x7f09002b;
+        public static final int matatu_menu_directions=0x7f09002e;
+        public static final int matatu_menu_more=0x7f09002d;
+        public static final int matatu_menu_share=0x7f09002c;
         public static final int network_location_output=0x7f090016;
         public static final int preference_user_email=0x7f09001a;
         public static final int preference_user_first_name=0x7f090018;
         public static final int preference_user_surname=0x7f090019;
         public static final int screen=0x7f090001;
-        public static final int search_box=0x7f090025;
+        public static final int searchbox=0x7f090024;
         public static final int submit_button=0x7f090023;
         public static final int textView1=0x7f09001d;
         public static final int textView2=0x7f09001f;
         public static final int textView4=0x7f09001b;
-        public static final int widget0=0x7f090024;
     }
     public static final class layout {
         public static final int about=0x7f030000;

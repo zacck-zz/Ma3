@@ -1,10 +1,13 @@
 package com.ke.matatu;
 
+import java.util.List;
+
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
+import com.google.android.maps.Overlay;
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 
@@ -30,7 +33,7 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 
 		setContentView(R.layout.location_map);
 
-		// Inflate and customize the UIcontroller = map.getController();
+		// Inflate and customize the UI
 		createActivityUI();
 	}
 
@@ -52,13 +55,18 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 			} else {
 				updateLocation(lastNetworkLocation);
 			}
-
+		
+		userLocationOverlay.enableMyLocation();
+		List<Overlay> overlaysList = map.getOverlays();
+		overlaysList.add(userLocationOverlay);
 	}
 
 	private void updateLocation(Location location) {
-		int lat = (int) (location.getLatitude() * 1E6);
-		int lng = (int) (location.getLongitude() * 1E6);
-		mapCenter = new GeoPoint(lat, lng);
+		Double lat = location.getLatitude() * 1E6;
+		Double lng = location.getLongitude() * 1E6;
+		mapCenter = new GeoPoint(lat.intValue(), lng.intValue());
+		
+		controller.setCenter(mapCenter);
 		controller.animateTo(mapCenter);
 	}
 
@@ -149,8 +157,7 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		userLocationOverlay.enableMyLocation();
-		 registerLocationProviders();
+		registerLocationProviders();
 	}
 
 	@Override
