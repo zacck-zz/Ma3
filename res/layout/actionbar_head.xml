@@ -1,0 +1,13 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res/com.nrb.matatu">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<com.markupartist.android.widget.ActionBar
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			style="@style/ActionBar" android:id="@+id/actionbar">
+			<!-- android:background="@color/action_background"> -->
+		</com.markupartist.android.widget.ActionBar>
+
+	</LinearLayout>
+</merge>

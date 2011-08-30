@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.ke.matatu" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="7" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+	<application android:icon="@drawable/ic_bus" android:theme="@style/Theme.NoTitleBar"
+		android:label="@string/app_name">
+		<uses-library android:name="com.google.android.maps" />
+
+		<activity android:name=".HomeActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".SearchActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_search" />
+
+		<activity android:name=".AboutActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_about" />
+
+		<activity android:name=".TaxiActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_taxi" />
+
+		<activity android:name=".MatatuActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_matatu" />
+
+		<activity android:name=".PreferencesActivity" android:theme="@android:style/Theme.Black"
+			android:label="@string/activity_title_preferences" />
+
+		<activity android:name=".LocationsActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_maps" />
+
+		<activity android:name=".ReportActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_title_reports" />
+
+		<activity android:name=".ViewReportsActivity" android:theme="@style/Theme.NoTitleBar"
+			android:label="@string/activity_view_reports" />
+
+		<service android:name=".service.TaxiLocatorService"></service>
+
+	</application>
+</manifest>

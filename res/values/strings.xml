@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ma3</string>
+    <string name="description_logo">Demo</string>
+    <string name="apiKey">0T2M9P8Homffu8ax-OPRtHbcDo_gE1OTtnzjPQw</string>
+    
+    <string name="activity_title_about">About</string>
+    <string name="activity_title_home">Home</string>
+    <string name="activity_title_search">Search</string>
+    <string name="activity_title_taxi">Taxi</string>
+    <string name="activity_title_matatu">Matatu</string>
+    <string name="activity_title_maps">Maps</string>
+    <string name="activity_title_reports">Reports</string>
+    <string name="activity_title_preferences">Preferences</string>
+       
+    <string name="dashboard_button_matatu">Matatu</string>
+    <string name="dashboard_button_taxi">Taxi</string>
+    <string name="dashboard_button_maps">Maps</string>
+    <string name="dashboard_button_reports">Reports</string>
+    
+    <string name="title_text">Window title</string>
+    
+    <string name="share">Share</string>
+    
+    <string name="location_menu_current_location">My Location</string>
+    <string name="location_menu_directions">Directions</string>
+    <string name="location_menu_show_taxis">Taxis</string>
+    
+    <string name="matatu_report_title_label">Incident Title</string>
+    <string name="matatu_report_incident_label">Incident Details</string>
+    <string name="matatu_report_camera_button">Take Picture</string>
+    <string name="matatu_report_submit_button">Submit</string>
+    <string name="matatu_report_type_label">Incident Type</string>
+    <string name="activity_view_reports">View Reports</string>
+</resources>

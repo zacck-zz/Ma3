@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res/com.nrb.matatu">
+
+	<!-- Include action bar -->
+	<include layout="@layout/actionbar_head" android:id="@id/actionbar" />
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:layout_weight="3" xmlns:android="http://schemas.android.com/apk/res/android">
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<Button android:id="@+id/dashboard_button_matatu"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/dashboard_button_matatu" android:drawableTop="@drawable/ic_bus"
+				style="@style/DashBoardButton" android:onClick="onClickFeature" />
+			<Button android:id="@+id/dashboard_button_taxi"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/dashboard_button_taxi" android:drawableTop="@drawable/ic_taxi_launcher"
+				style="@style/DashBoardButton" android:onClick="onClickFeature" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<Button android:id="@+id/dashboard_button_maps"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				style="@style/DashBoardButton" android:text="@string/dashboard_button_maps"
+				android:onClick="onClickFeature" />
+			<Button android:id="@+id/dashboard_button_reports"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/dashboard_button_reports" style="@style/DashBoardButton"
+				android:onClick="onClickFeature" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_weight="1">
+
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

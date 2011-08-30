@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="Settings">
+		<EditTextPreference android:title="First name"
+			android:key="key_first_name" android:summary="To be used alongside any user specific information"
+			android:id="@+id/preference_user_first_name" />
+		<EditTextPreference android:title="Surname" android:key="key_surname"
+			android:summary="To be used alongside any user specific information"
+			android:id="@+id/preference_user_surname" />
+		<EditTextPreference android:title="Email"
+			android:key="key_email" android:summary="Solely for communication with the user"
+			android:id="@+id/preference_user_email" />
+		<ListPreference android:title="Update time"
+			android:summary="Minimun GPS update time. Higher update times help conserves battery consumption"
+			android:key="key_update_interval"></ListPreference>
+		<CheckBoxPreference android:key="key_log_interaction"
+			android:title="Log activity" android:checked="true"
+			android:summary="Keep logs of interaction with taxis (Highly recommended)" />
+		<EditTextPreference android:key="key_taxi_auth"
+			android:title="Authentication key" android:summary="Required for Taxis only (Registration required)."
+			android:password="true" />
+	</PreferenceCategory>
+</PreferenceScreen>
