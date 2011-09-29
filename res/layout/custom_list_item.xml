@@ -12,5 +12,4 @@
 	<TextView android:layout_width="fill_parent" android:id="@+id/list_item_description"
 		android:text="List item description" android:layout_height="wrap_content"
 		android:layout_toRightOf="@id/list_item_icon" android:layout_below="@id/list_item_title"></TextView>
-
 </RelativeLayout>

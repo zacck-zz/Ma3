@@ -8,10 +8,13 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.Overlay;
+import com.google.android.maps.OverlayItem;
+import com.ke.matatu.overlays.ExampleOverlays;
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,6 +29,8 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 
 	private MyLocationOverlay userLocationOverlay;
 	private GeoPoint mapCenter;
+	private ExampleOverlays exampleOverlay;
+	private List<Overlay> overlaysList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +60,44 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 			} else {
 				updateLocation(lastNetworkLocation);
 			}
-		
+
 		userLocationOverlay.enableMyLocation();
-		List<Overlay> overlaysList = map.getOverlays();
+		overlaysList = map.getOverlays();
 		overlaysList.add(userLocationOverlay);
+		showTaxisNearby();
+	}
+
+	private void showTaxisNearby() {
+		Drawable pushpin = getResources().getDrawable(R.drawable.red_pushpin);
+		exampleOverlay = new ExampleOverlays(pushpin);
+
+		Double latitude = 33.088584 * 1E6;
+		Double longitude = -99.670899 * 1E6;
+		GeoPoint taxiLoc = new GeoPoint(latitude.intValue(),
+				longitude.intValue());
+		OverlayItem taxiItem = new OverlayItem(taxiLoc, "Blue Cabs",
+				"0710123456");
+		exampleOverlay.addOverlay(taxiItem);
+		
+		Double lat = 33.0689484 * 1E6;
+		Double lng = -96.6710744 * 1E6;
+		GeoPoint taxLoc = new GeoPoint(lat.intValue(), lng.intValue());
+		OverlayItem taxiItem1 = new OverlayItem(taxLoc, "White Cabs",
+				"0713123456");
+		exampleOverlay.addOverlay(taxiItem1);
+		
+		overlaysList.add(exampleOverlay);
+		toastMessage("Show Taxis nearby");
 	}
 
 	private void updateLocation(Location location) {
 		Double lat = location.getLatitude() * 1E6;
 		Double lng = location.getLongitude() * 1E6;
 		mapCenter = new GeoPoint(lat.intValue(), lng.intValue());
-		
+
 		controller.setCenter(mapCenter);
-		controller.animateTo(mapCenter);
+		if (isCentredAtCurrentLocation())
+			controller.animateTo(mapCenter);
 	}
 
 	private void removeLocationListeners() {
@@ -97,7 +127,7 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 		userLocationOverlay = new MyLocationOverlay(LocationsActivity.this, map);
 
 		// Set map center as devices current location
-		 controller = map.getController();
+		controller = map.getController();
 	} // end createActivityUI
 
 	private void showProgressIndicatorActionBar(boolean display) {
@@ -202,7 +232,7 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 
 		@Override
 		public void performAction(View view) {
-			toastMessage("Taxi overlay will be displayed");
+			showTaxisNearby();
 		}
 
 	}
@@ -224,10 +254,10 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 
 	@Override
 	public void onLocationChanged(Location location) {
-		if (location != null)
-			toastMessage(String.format("Latitude: %f , Longitude: %f",
-					location.getLatitude(), location.getLongitude()));
-		
+		// if (location != null)
+		// toastMessage(String.format("Latitude: %f , Longitude: %f",
+		// location.getLatitude(), location.getLongitude()));
+
 		updateLocation(location);
 	}
 
@@ -249,12 +279,21 @@ public class LocationsActivity extends MapActivity implements LocationListener {
 
 	}
 
+	public void setCentredAtCurrentLocation(boolean centredCurrentLocation) {
+		this.centredCurrentLocation = centredCurrentLocation;
+	}
+
+	public boolean isCentredAtCurrentLocation() {
+		return centredCurrentLocation;
+	}
+
 	private static final long MIN_UPDATE_TIME = 0;
 	private static final float MIN_UPDATE_DISTANCE = 0;
 
+	private boolean centredCurrentLocation = false;
 	// private static final String TAG = "LocationMapActivity";
 	private LocationManager locationManager;
-	 private MapController controller;
+	private MapController controller;
 	private ActionBar actionBar;
 	private MapView map;
 }

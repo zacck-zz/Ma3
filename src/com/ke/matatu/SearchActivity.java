@@ -6,7 +6,7 @@ public class SearchActivity extends CustomActivity {
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.search);
+		setContentView(R.xml.searchable);
 	}
 
 }

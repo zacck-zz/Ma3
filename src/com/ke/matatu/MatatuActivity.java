@@ -49,6 +49,13 @@ public class MatatuActivity extends CustomListActivity {
 		super.onStop();
 	}
 
+	
+	@Override
+	public boolean onSearchRequested() {
+		// TODO Auto-generated method stub
+		return super.onSearchRequested();
+	}
+
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.matatu_menu_add_route:
