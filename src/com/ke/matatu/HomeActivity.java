@@ -65,8 +65,7 @@ public class HomeActivity extends CustomActivity {
 //			share("Subject", "Some message body");
 			stopService(serviceIntent);
 			break;
-		case R.id.dashboard_menu_more:
-			toast("More options menu item");
+		case R.id.dashboard_menu_preferences:
 			startActivity(new Intent(HomeActivity.this, PreferencesActivity.class));
 			break;
 		default:
